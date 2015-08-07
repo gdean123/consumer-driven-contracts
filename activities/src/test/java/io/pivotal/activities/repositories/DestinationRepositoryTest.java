@@ -21,9 +21,9 @@ public class DestinationRepositoryTest extends TestBase {
     }
 
     @Rule
-    public PactProviderRule mockProvider = new PactProviderRule("Destinations Service", "localhost", 4321, this);
+    public PactProviderRule mockProvider = new PactProviderRule("destinations_service", "localhost", 4321, this);
 
-    @Pact(provider = "Destinations Service", consumer = "Activities Service")
+    @Pact(provider = "destinations_service", consumer = "activities_service")
     public PactFragment createFragment(ConsumerPactBuilder.PactDslWithProvider defineContract) {
         return defineContract
             .given("a destination exists with id 456")
@@ -36,7 +36,7 @@ public class DestinationRepositoryTest extends TestBase {
     }
 
     @Test
-    @PactVerification("Destinations Service")
+    @PactVerification("destinations_service")
     public void get_fetchesTheDestinationWithTheGivenId() throws IOException {
         Destination destination = destinationRepository.get(456l);
         assertThat(destination.getCity()).isEqualTo("Paris");
