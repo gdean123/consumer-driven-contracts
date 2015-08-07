@@ -1,0 +1,30 @@
+{
+  "provider" : {
+    "name" : "destinations_service"
+  },
+  "consumer" : {
+    "name" : "activities_service"
+  },
+  "interactions" : [ {
+    "providerState" : "a destination exists with id 456",
+    "description" : "a request for destination with id 456",
+    "request" : {
+      "method" : "GET",
+      "path" : "/destinations/456"
+    },
+    "response" : {
+      "status" : 200,
+      "body" : {
+        "city" : "Paris"
+      }
+    }
+  } ],
+  "metadata" : {
+    "pact-specification" : {
+      "version" : "2.0.0"
+    },
+    "pact-jvm" : {
+      "version" : "3.0.0"
+    }
+  }
+}
