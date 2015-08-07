@@ -1,7 +1,7 @@
 package io.pivotal.activities.supports;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import io.pivotal.activities.utilities.Json;
 import org.junit.Before;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -21,7 +21,6 @@ public abstract class ControllerTestBase extends SpringTestBase {
 
     protected JsonNode get(String url) throws Exception {
         String response = mvc.perform(MockMvcRequestBuilders.get(url)).andReturn().getResponse().getContentAsString();
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readTree(response);
+        return Json.parse(response);
     }
 }
