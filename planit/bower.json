@@ -1,0 +1,14 @@
+{
+  "name": "planit",
+  "version": "0.0.0",
+  "authors": [
+    "nbatra@pivotal.io"
+  ],
+  "description": "Trip planner app by pd nb",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.4.3",
+    "jquery": "~2.1.4",
+    "angular-ui-router": "~0.2.15"
+  }
+}

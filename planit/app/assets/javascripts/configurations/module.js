@@ -1,0 +1,1 @@
+planIt = angular.module('PlanIt', ['ui.router', 'templates']);

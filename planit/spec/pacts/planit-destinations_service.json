@@ -1,0 +1,37 @@
+{
+  "consumer": {
+    "name": "PlanIt"
+  },
+  "provider": {
+    "name": "Destinations Service"
+  },
+  "interactions": [
+    {
+      "description": "request for all destinations",
+      "provider_state": "two destinations exist",
+      "request": {
+        "method": "get",
+        "path": "/destinations",
+        "query": ""
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": [
+          {
+            "city": "Miami",
+            "country": "United States"
+          },
+          {
+            "city": "Madrid",
+            "country": "Spain"
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecificationVersion": "1.0.0"
+  }
+}
