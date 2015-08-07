@@ -6,7 +6,7 @@ import org.mockito.MockitoAnnotations;
 import javax.transaction.Transactional;
 
 @Transactional
-public class TestBase {
+public abstract class TestBase {
 
     @Before
     public void testBaseSetup() throws Exception {

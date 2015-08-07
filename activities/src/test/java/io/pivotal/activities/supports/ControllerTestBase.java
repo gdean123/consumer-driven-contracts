@@ -10,7 +10,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import javax.inject.Inject;
 
-public class ControllerTestBase extends SpringTestBase {
+public abstract class ControllerTestBase extends SpringTestBase {
     @Inject private WebApplicationContext webApplicationContext;
     private MockMvc mvc;
 
