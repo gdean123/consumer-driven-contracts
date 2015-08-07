@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.inject.Inject;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -20,7 +21,7 @@ public class ActivitiesController {
     @Inject private ActivitySerializer activitySerializer;
 
     @RequestMapping("/destinations/{destinationId}/activities")
-    public List<ActivityResponse> getActivitiesForDestination(@PathVariable Long destinationId) {
+    public List<ActivityResponse> getActivitiesForDestination(@PathVariable Long destinationId) throws IOException {
         List<Activity> activities = activityRepository.findByDestinationId(destinationId);
         Destination destination = destinationRepository.get(destinationId);
 
